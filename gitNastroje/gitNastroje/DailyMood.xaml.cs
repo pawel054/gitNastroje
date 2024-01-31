@@ -12,6 +12,12 @@ namespace gitNastroje
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DailyMood : ContentPage
     {
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            moodsList.ItemsSource = await App.Database.GetAllMoods();
+        }
+
         public DailyMood()
         {
             InitializeComponent();
