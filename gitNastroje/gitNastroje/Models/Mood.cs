@@ -10,6 +10,6 @@ namespace gitNastroje.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public MoodEnum Enum { get; set; }
+        public MoodEnum EnumMood { get; set; }
     }
 }
