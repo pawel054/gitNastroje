@@ -14,5 +14,15 @@ namespace gitNastroje
         {
             InitializeComponent();
         }
+
+        private void DatePickerChanged(object sender, PropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnMore(object sender, EventArgs e)
+        {
+
+        }
     }
 }
