@@ -68,6 +68,33 @@ namespace gitNastroje
         public MainPage()
         {
             InitializeComponent();
+
+            for(int i=0; i< Buttons.Count;i++)
+            {
+                Buttons[i].Padding = 4;
+                grid.Children.Add(Buttons[i]);
+                Grid.SetColumn(Buttons[i], i);
+                Buttons[i].Clicked += AddMoodClicked;
+            }
+        }
+
+        private async void AddMoodClicked(object sender, EventArgs e)
+        {
+            if (datePicker.Date <= DateTime.Now.Date)
+            {
+                int col = Grid.GetColumn((ImageButton)sender);
+                var mood = Enum.Parse(typeof(MoodEnum), col.ToString());
+                var dayMood = new Mood();
+                dayMood.Date = datePicker.Date;
+                dayMood.EnumMood = (MoodEnum)mood;
+
+                await App.Database.InsertMoodAync(dayMood);
+
+                DisableButtons(col);
+                GetLastDayMood();
+            }
+            else
+                await DisplayAlert("Błąd", "Nieprawidłowa data", "OK");
         }
 
         private async void DatePickerChanged(object sender, PropertyChangedEventArgs e)
@@ -76,7 +103,11 @@ namespace gitNastroje
             if(mood != null)
             {
                 var col = (int)mood.Result.EnumMood;
-                
+                DisableButtons(col);
+            }
+            else
+            {
+                EnableButtons();
             }
         }
 
