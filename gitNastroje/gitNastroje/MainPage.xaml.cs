@@ -113,7 +113,7 @@ namespace gitNastroje
 
         private void BtnMore(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new DailyMood());
         }
 
     }
