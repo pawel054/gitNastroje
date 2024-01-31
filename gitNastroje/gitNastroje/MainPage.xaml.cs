@@ -20,6 +20,16 @@ namespace gitNastroje
             {MoodEnum.okropny, "bad.png" },
         };
 
+        private static List<ImageButton> Buttons = new List<ImageButton>()
+        {
+            new ImageButton(){ Source = MoodIcons[MoodEnum.zadowolony] },
+            new ImageButton(){ Source = MoodIcons[MoodEnum.dobry] },
+            new ImageButton(){ Source = MoodIcons[MoodEnum.przeciętny] },
+            new ImageButton(){ Source = MoodIcons[MoodEnum.słaby] },
+            new ImageButton(){ Source = MoodIcons[MoodEnum.okropny] },
+        };
+
+
         public MainPage()
         {
             InitializeComponent();
