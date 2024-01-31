@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gitNastroje.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,14 +11,15 @@ namespace gitNastroje
 {
     public partial class MainPage : ContentPage
     {
+
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void DatePickerChanged(object sender, PropertyChangedEventArgs e)
+        private async void DatePickerChanged(object sender, PropertyChangedEventArgs e)
         {
-
+          
         }
 
         private void BtnMore(object sender, EventArgs e)

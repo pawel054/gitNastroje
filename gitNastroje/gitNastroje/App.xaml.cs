@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gitNastroje.Models;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,11 +7,22 @@ namespace gitNastroje
 {
     public partial class App : Application
     {
+        static Database database;
+        public static Database Database
+        {
+            get
+            {
+                if (database == null)
+                    database = new Database(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mood.db3"));
+                return database;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
