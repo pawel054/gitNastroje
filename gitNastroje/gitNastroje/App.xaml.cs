@@ -1,5 +1,6 @@
 ﻿using gitNastroje.Models;
 using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +14,7 @@ namespace gitNastroje
             get
             {
                 if (database == null)
-                    database = new Database(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "mood.db3"));
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "moods.db3"));
                 return database;
             }
         }

@@ -8,10 +8,10 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
                                 <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}"/>
                                 <Label Text=" - "/>
-                                <Label Text="{Binding Mood}"/>
+                                <Label Text="{Binding EnumMood}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

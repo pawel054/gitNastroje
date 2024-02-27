@@ -99,10 +99,10 @@ namespace gitNastroje
 
         private async void DatePickerChanged(object sender, PropertyChangedEventArgs e)
         {
-            var mood = App.Database.GetMood(datePicker.Date);
+            var mood = await App.Database.GetMood(datePicker.Date);
             if(mood != null)
             {
-                var col = (int)mood.Result.EnumMood;
+                var col = (int)mood.EnumMood;
                 DisableButtons(col);
             }
             else
