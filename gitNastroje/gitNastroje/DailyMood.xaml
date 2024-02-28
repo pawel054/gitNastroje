@@ -3,20 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gitNastroje.DailyMood">
     <ContentPage.Content>
-        <ScrollView>
-            <ListView x:Name="moodsList">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}"/>
-                                <Label Text=" - "/>
-                                <Label Text="{Binding EnumMood}"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="RoyalBlue" Margin="0,20,0,20" Padding="5" VerticalOptions="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Nastrój" TextColor="White" Grid.Column="0" FontSize="16" Grid.Row="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <Label Text="Data" TextColor="White" Grid.Column="1" FontSize="16" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </Grid>
+            </Frame>
+            <ScrollView>
+                <ListView x:Name="moodsList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}"/>
+                                    <Label Text=" - "/>
+                                    <Label Text="{Binding EnumMood}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
