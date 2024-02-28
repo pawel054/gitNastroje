@@ -4,7 +4,7 @@
              x:Class="gitNastroje.DailyMood">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="RoyalBlue" Margin="0,20,0,20" Padding="5" VerticalOptions="Center">
+            <Frame BackgroundColor="RoyalBlue" Margin="10,20,10,20" Padding="5" VerticalOptions="Center">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -18,15 +18,20 @@
                 </Grid>
             </Frame>
             <ScrollView>
-                <ListView x:Name="moodsList">
+                <ListView x:Name="moodsList" Margin="10,0,10,0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
-                                    <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}"/>
-                                    <Label Text=" - "/>
-                                    <Label Text="{Binding EnumMood}"/>
-                                </StackLayout>
+                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding ImageSrc}" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding EnumMood}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                                    <Label Grid.Column="2" Text="{Binding Date, StringFormat='{0:MM.dd.yyyy}'}" VerticalTextAlignment="Center"/>
+                                </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

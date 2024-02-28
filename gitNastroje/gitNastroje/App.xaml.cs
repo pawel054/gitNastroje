@@ -14,7 +14,7 @@ namespace gitNastroje
             get
             {
                 if (database == null)
-                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "moods.db3"));
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "moods4.db3"));
                 return database;
             }
         }

@@ -65,6 +65,17 @@ namespace gitNastroje
             }
         }
 
+        private string ButtonSource(int btnID)
+        {
+            string source = "0";
+            for (int i = 0; i < Buttons.Count; i++)
+            {
+                if (i == btnID)
+                    source =  Buttons[i].Source.ToString();
+            }
+            return source;
+        }
+
         public MainPage()
         {
             InitializeComponent();
@@ -88,6 +99,8 @@ namespace gitNastroje
                 var dayMood = new Mood();
                 dayMood.Date = datePicker.Date;
                 dayMood.EnumMood = (MoodEnum)mood;
+                dayMood.ImageSrc = ButtonSource(col).Substring(6);
+                
 
                 await App.Database.InsertMoodAync(dayMood);
 
