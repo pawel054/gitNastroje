@@ -22,5 +22,10 @@ namespace gitNastroje
         {
             InitializeComponent();
         }
+
+        private void BackToMainPage(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

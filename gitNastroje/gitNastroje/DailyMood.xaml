@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="gitNastroje.DailyMood">
+             x:Class="gitNastroje.DailyMood"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="RoyalBlue" Margin="10,20,10,20" Padding="5" VerticalOptions="Center">
@@ -25,11 +26,11 @@
                                 <Grid VerticalOptions="Center" HorizontalOptions="Center">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="100"/>
-                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="170"/>
+                                        <ColumnDefinition Width="110"/>
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="{Binding ImageSrc}" VerticalOptions="Center"/>
-                                    <Label Grid.Column="1" Text="{Binding EnumMood}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                                    <Label Grid.Column="1" Text="{Binding EnumMood}" VerticalTextAlignment="Center"/>
                                     <Label Grid.Column="2" Text="{Binding Date, StringFormat='{0:MM.dd.yyyy}'}" VerticalTextAlignment="Center"/>
                                 </Grid>
                             </ViewCell>
@@ -37,6 +38,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollView>
+            <Button Text="Wróć" BackgroundColor="RoyalBlue" TextColor="White" CornerRadius="20" HorizontalOptions="Center" WidthRequest="120" Margin="0,0,0,20" Clicked="BackToMainPage"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
