@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="gitNastroje.MainPage">
+             x:Class="gitNastroje.MainPage"
+             NavigationPage.HasNavigationBar="False">
     <StackLayout>
         <Label Text="Jak się dzisiaj czujesz?" FontSize="24" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" Margin="0,20,0,0"/>
-        <DatePicker x:Name="datePicker" PropertyChanged="DatePickerChanged"/>
-        <Grid x:Name="grid">
+        <DatePicker x:Name="datePicker" PropertyChanged="DatePickerChanged" Margin="10,0,10,0"/>
+        <Grid x:Name="grid" Margin="10,0,10,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
@@ -17,13 +18,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Label Text="Twój poprzedni dzień: " FontSize="18" TextColor="Black" Margin="0, 50, 0, 0"/>
-        <StackLayout Orientation="Horizontal">
+        <Label Text="Twój poprzedni dzień: " FontSize="18" TextColor="Black" Margin="10, 50, 0, 0"/>
+        <StackLayout Orientation="Horizontal" Margin="10,0,0,0">
             <Label x:Name="labelLastData" FontSize="16" TextColor="Black"/>
             <Label Text=" - " FontSize="16" TextColor="Black"/>
             <Label x:Name="labelLastMood" FontSize="16" TextColor="Black"/>
         </StackLayout>
-        <Button Clicked="BtnMore" Text="Zobacz więcej danych" VerticalOptions="EndAndExpand"/>
+        <Button Clicked="BtnMore" BackgroundColor="RoyalBlue" TextColor="White" TextTransform="None" CornerRadius="20" Margin="10,0,10,20" Text="Zobacz więcej danych" VerticalOptions="EndAndExpand"/>
     </StackLayout>
 
 </ContentPage>

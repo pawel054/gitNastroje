@@ -68,8 +68,9 @@ namespace gitNastroje
         public MainPage()
         {
             InitializeComponent();
+            GetLastDayMood();
 
-            for(int i=0; i< Buttons.Count;i++)
+            for (int i=0; i< Buttons.Count;i++)
             {
                 Buttons[i].Padding = 4;
                 grid.Children.Add(Buttons[i]);
